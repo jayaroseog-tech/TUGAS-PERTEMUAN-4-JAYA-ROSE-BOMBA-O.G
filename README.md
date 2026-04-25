@@ -1,129 +1,99 @@
-# TUGAS-PERTEMUAN-4-JAYA-ROSE-BOMBA-O.G
-##🚀 Tugas Pertemuan 4 – Pemrograman Basis Data
+# 📘 Tugas Pertemuan 4 - Pemrograman Basis Data
 
+## 👤 Identitas Mahasiswa
 
+* **Nama** : Jaya Rose Bomba O.G
+* **NIM** : IK2411007
+* **Mata Kuliah** : Pemrograman Basis Data
 
+---
 
+## 📌 Deskripsi Tugas
 
+Repository ini berisi hasil pengerjaan tugas pertemuan ke-4 yang membahas tentang **struktur kontrol percabangan** dalam MySQL, yaitu penggunaan **IF-THEN-ELSE** dan **CASE**.
 
+Percabangan digunakan untuk mengambil keputusan berdasarkan kondisi tertentu, seperti:
 
+* Menentukan status stok barang
+* Menghitung diskon berdasarkan total belanja
+* Menentukan predikat dan kelulusan mahasiswa
 
-##👤 Identitas
-Keterangan	Detail
-*👨‍🎓 Nama*	Jaya Rose Bomba O.G
-*🆔 NIM*	IK2411007
-*📚 Mata* Kuliah	Pemrograman Basis Data
-##📌 Deskripsi Proyek
+Seluruh implementasi dibuat menggunakan **Stored Procedure** dan **Query SQL**.
 
-Proyek ini bertujuan untuk memahami penggunaan:
+---
 
-🔹 IF-THEN-ELSE
-🔹 CASE Statement
-🔹 Stored Procedure di MySQL
+## 🗂️ Daftar File dalam Repository
 
-Digunakan untuk menyelesaikan beberapa studi kasus:
+* `program.sql` → Berisi seluruh kode SQL (database, tabel, data, procedure, dan pengujian)
+* `laporan.pdf` → Berisi laporan analisis tugas
+* `README.md` → Penjelasan repository
 
-📦 Status stok barang
-💰 Perhitungan diskon
-🎓 Predikat & kelulusan mahasiswa
-🗂️ Struktur Database
-🧱 Membuat Database
-CREATE DATABASE db_pertemuan4;
-USE db_pertemuan4;
-📦 Tabel Produk
-CREATE TABLE produk (
-    id_produk INT AUTO_INCREMENT PRIMARY KEY,
-    nama_produk VARCHAR(100),
-    stok INT
-);
-##📥 Data Produk
-INSERT INTO produk (nama_produk, stok) VALUES
-('Laptop', 25),
-('Mouse', 4),
-('Keyboard', 10),
-('Flashdisk', 0),
-('Monitor', 7);
-##⚙️ Fitur Utama
-🔹 1. Cek Status Stok (Stored Procedure)
+---
 
-Menentukan status stok berdasarkan jumlah barang.
+## ⚙️ Cara Menjalankan Program (Menggunakan Laragon)
 
-##📊 Kategori:
-Stok	Status
-0	❌ Habis
-1–5	⚠️ Hampir Habis
-6–20	✅ Tersedia
->20	🔒 Stok Aman
-▶️ Cara Menjalankan
+### 1. Jalankan Laragon
+
+* Buka aplikasi Laragon
+* Klik **Start All** untuk menjalankan Apache & MySQL
+
+---
+
+### 2. Buka Database
+
+* Klik menu **Database** di Laragon
+* Pilih **phpMyAdmin** atau **HeidiSQL**
+
+---
+
+### 3. Import / Jalankan Script SQL
+
+* Buat database baru (opsional, karena sudah ada di script)
+* Buka file `program.sql`
+* Copy seluruh isi file
+* Paste ke query editor
+* Klik **Run / Execute**
+
+---
+
+### 4. Menjalankan Procedure (Pengujian)
+
+Gunakan perintah berikut:
+
+```sql
 CALL cek_status_stok(3);
-🔹 2. CASE Statement (Query)
-
-Menampilkan status stok langsung dari tabel.
-
-SELECT 
-id_produk,
-nama_produk,
-stok,
-CASE 
-    WHEN stok = 0 THEN 'Habis'
-    WHEN stok BETWEEN 1 AND 5 THEN 'Hampir Habis'
-    WHEN stok BETWEEN 6 AND 20 THEN 'Tersedia'
-    ELSE 'Stok Aman'
-END AS status_stok
-FROM produk;
-🔹 3. Hitung Diskon
-
-Menghitung diskon berdasarkan total belanja.
-
-##💸 Ketentuan Diskon:
-Total Belanja	Diskon
-≥ 1.000.000	15%
-≥ 500.000	10%
-≥ 250.000	5%
-< 250.000	0%
-▶️ Cara Menjalankan
-CALL hitung_diskon(1200000);
-🔹 4. Cek Predikat Mahasiswa
-
-Menentukan nilai dan status kelulusan.
-
-##🎓 Predikat:
-Nilai	Predikat
-≥ 90	🌟 Sangat Memuaskan
-≥ 80	👍 Memuaskan
-≥ 70	🙂 Baik
-≥ 60	😐 Cukup
-< 60	❌ Kurang
-##✅ Kelulusan:
-≥ 70 → Lulus
-< 70 → Tidak Lulus
-##▶️ Cara Menjalankan
+CALL hitung_diskon(750000);
 CALL cek_predikat_mahasiswa(85);
-🧪 Pengujian
+```
 
-✔ Menggunakan CALL untuk Stored Procedure
-✔ Menggunakan SELECT untuk query CASE
-✔ Semua output telah sesuai dengan logika percabangan
+---
 
-##📊 Insight / Pembelajaran
-🧠 IF-THEN-ELSE cocok untuk logika kompleks dalam procedure
-⚡ CASE lebih efisien untuk query langsung
-🔄 Stored Procedure membuat kode lebih modular & reusable
-📎 Contoh Output
-Status: Hampir Habis
+### 5. Menjalankan Query CASE
 
-Total Belanja : Rp 1200000
-Diskon : 15%
-Jumlah Diskon : Rp 180000
-Total Bayar : Rp 1020000
+```sql
+SELECT * FROM produk;
+```
 
-Nilai : 85
-Predikat : Memuaskan
-Status : Lulus
-🏁 Status Project
+---
 
-✅ Selesai & Berjalan dengan Baik
+## 📊 Hasil yang Diharapkan
 
-##📌 Catatan
+* Status stok ditampilkan sesuai jumlah stok
+* Diskon dihitung berdasarkan total belanja
+* Predikat dan status mahasiswa ditentukan sesuai nilai
 
-Project ini dibuat untuk keperluan pembelajaran dan latihan Pemrograman Basis Data.
+---
+
+## 🎯 Kesimpulan
+
+Tugas ini menunjukkan bahwa struktur percabangan **IF-THEN-ELSE** dan **CASE** sangat penting dalam pemrograman basis data karena memungkinkan sistem untuk mengambil keputusan secara otomatis berdasarkan kondisi tertentu.
+
+---
+
+## 🚀 Catatan
+
+* Pastikan MySQL pada Laragon sudah berjalan
+* Pastikan tidak ada error saat menjalankan script
+* Gunakan database `db_pertemuan4` sesuai script
+
+---
