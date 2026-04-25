@@ -1,5 +1,5 @@
 # TUGAS-PERTEMUAN-4-JAYA-ROSE-BOMBA-O.G
-🚀 Tugas Pertemuan 4 – Pemrograman Basis Data
+##🚀 Tugas Pertemuan 4 – Pemrograman Basis Data
 
 
 
@@ -8,12 +8,12 @@
 
 
 
-👤 Identitas
+##👤 Identitas
 Keterangan	Detail
-👨‍🎓 Nama	Jaya Rose Bomba O.G
-🆔 NIM	IK2411007
-📚 Mata Kuliah	Pemrograman Basis Data
-📌 Deskripsi Proyek
+*👨‍🎓 Nama*	Jaya Rose Bomba O.G
+*🆔 NIM*	IK2411007
+*📚 Mata* Kuliah	Pemrograman Basis Data
+##📌 Deskripsi Proyek
 
 Proyek ini bertujuan untuk memahami penggunaan:
 
@@ -36,19 +36,19 @@ CREATE TABLE produk (
     nama_produk VARCHAR(100),
     stok INT
 );
-📥 Data Produk
+##📥 Data Produk
 INSERT INTO produk (nama_produk, stok) VALUES
 ('Laptop', 25),
 ('Mouse', 4),
 ('Keyboard', 10),
 ('Flashdisk', 0),
 ('Monitor', 7);
-⚙️ Fitur Utama
+##⚙️ Fitur Utama
 🔹 1. Cek Status Stok (Stored Procedure)
 
 Menentukan status stok berdasarkan jumlah barang.
 
-📊 Kategori:
+##📊 Kategori:
 Stok	Status
 0	❌ Habis
 1–5	⚠️ Hampir Habis
@@ -75,7 +75,7 @@ FROM produk;
 
 Menghitung diskon berdasarkan total belanja.
 
-💸 Ketentuan Diskon:
+##💸 Ketentuan Diskon:
 Total Belanja	Diskon
 ≥ 1.000.000	15%
 ≥ 500.000	10%
@@ -87,17 +87,17 @@ CALL hitung_diskon(1200000);
 
 Menentukan nilai dan status kelulusan.
 
-🎓 Predikat:
+##🎓 Predikat:
 Nilai	Predikat
 ≥ 90	🌟 Sangat Memuaskan
 ≥ 80	👍 Memuaskan
 ≥ 70	🙂 Baik
 ≥ 60	😐 Cukup
 < 60	❌ Kurang
-✅ Kelulusan:
+##✅ Kelulusan:
 ≥ 70 → Lulus
 < 70 → Tidak Lulus
-▶️ Cara Menjalankan
+##▶️ Cara Menjalankan
 CALL cek_predikat_mahasiswa(85);
 🧪 Pengujian
 
@@ -105,7 +105,7 @@ CALL cek_predikat_mahasiswa(85);
 ✔ Menggunakan SELECT untuk query CASE
 ✔ Semua output telah sesuai dengan logika percabangan
 
-📊 Insight / Pembelajaran
+##📊 Insight / Pembelajaran
 🧠 IF-THEN-ELSE cocok untuk logika kompleks dalam procedure
 ⚡ CASE lebih efisien untuk query langsung
 🔄 Stored Procedure membuat kode lebih modular & reusable
@@ -124,6 +124,6 @@ Status : Lulus
 
 ✅ Selesai & Berjalan dengan Baik
 
-📌 Catatan
+##📌 Catatan
 
 Project ini dibuat untuk keperluan pembelajaran dan latihan Pemrograman Basis Data.
