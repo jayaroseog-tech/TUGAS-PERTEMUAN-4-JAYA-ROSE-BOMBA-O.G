@@ -1,56 +1,62 @@
 # TUGAS-PERTEMUAN-4-JAYA-ROSE-BOMBA-O.G
-📘 README – Tugas Pertemuan 4
+🚀 Tugas Pertemuan 4 – Pemrograman Basis Data
 
-Pemrograman Basis Data
+
+
+
+
+
+
 
 👤 Identitas
-Nama: Jaya Rose Bomba O.G
-NIM: IK2411007
-Mata Kuliah: Pemrograman Basis Data
+Keterangan	Detail
+👨‍🎓 Nama	Jaya Rose Bomba O.G
+🆔 NIM	IK2411007
+📚 Mata Kuliah	Pemrograman Basis Data
 📌 Deskripsi Proyek
 
-Proyek ini berisi implementasi struktur kontrol percabangan dalam MySQL, yaitu:
+Proyek ini bertujuan untuk memahami penggunaan:
 
-IF-THEN-ELSE
-CASE
+🔹 IF-THEN-ELSE
+🔹 CASE Statement
+🔹 Stored Procedure di MySQL
 
-Digunakan untuk menyelesaikan beberapa kasus:
+Digunakan untuk menyelesaikan beberapa studi kasus:
 
-Menentukan status stok barang
-Menghitung diskon belanja
-Menentukan predikat dan kelulusan mahasiswa
+📦 Status stok barang
+💰 Perhitungan diskon
+🎓 Predikat & kelulusan mahasiswa
 🗂️ Struktur Database
-1. Database
+🧱 Membuat Database
 CREATE DATABASE db_pertemuan4;
 USE db_pertemuan4;
-2. Tabel Produk
+📦 Tabel Produk
 CREATE TABLE produk (
     id_produk INT AUTO_INCREMENT PRIMARY KEY,
     nama_produk VARCHAR(100),
     stok INT
 );
-3. Data Produk
+📥 Data Produk
 INSERT INTO produk (nama_produk, stok) VALUES
 ('Laptop', 25),
 ('Mouse', 4),
 ('Keyboard', 10),
 ('Flashdisk', 0),
 ('Monitor', 7);
-⚙️ Fitur & Stored Procedure
-1. 🔹 Cek Status Stok
+⚙️ Fitur Utama
+🔹 1. Cek Status Stok (Stored Procedure)
 
-Menentukan kondisi stok berdasarkan jumlah.
+Menentukan status stok berdasarkan jumlah barang.
 
-Logika:
-0 → Habis
-1–5 → Hampir Habis
-6–20 → Tersedia
-
-20 → Stok Aman
-
-Pemanggilan:
+📊 Kategori:
+Stok	Status
+0	❌ Habis
+1–5	⚠️ Hampir Habis
+6–20	✅ Tersedia
+>20	🔒 Stok Aman
+▶️ Cara Menjalankan
 CALL cek_status_stok(3);
-2. 🔹 Query CASE Status Stok
+🔹 2. CASE Statement (Query)
 
 Menampilkan status stok langsung dari tabel.
 
@@ -65,52 +71,59 @@ CASE
     ELSE 'Stok Aman'
 END AS status_stok
 FROM produk;
-3. 🔹 Hitung Diskon Belanja
+🔹 3. Hitung Diskon
 
 Menghitung diskon berdasarkan total belanja.
 
-Ketentuan Diskon:
-≥ 1.000.000 → 15%
-≥ 500.000 → 10%
-≥ 250.000 → 5%
-< 250.000 → 0%
-Pemanggilan:
+💸 Ketentuan Diskon:
+Total Belanja	Diskon
+≥ 1.000.000	15%
+≥ 500.000	10%
+≥ 250.000	5%
+< 250.000	0%
+▶️ Cara Menjalankan
 CALL hitung_diskon(1200000);
-Output:
-Total Belanja
-Diskon (%)
-Jumlah Diskon
-Total Bayar
-4. 🔹 Cek Predikat Mahasiswa
+🔹 4. Cek Predikat Mahasiswa
 
-Menentukan predikat nilai dan status kelulusan.
+Menentukan nilai dan status kelulusan.
 
-Predikat:
-≥ 90 → Sangat Memuaskan
-≥ 80 → Memuaskan
-≥ 70 → Baik
-≥ 60 → Cukup
-< 60 → Kurang
-Kelulusan:
+🎓 Predikat:
+Nilai	Predikat
+≥ 90	🌟 Sangat Memuaskan
+≥ 80	👍 Memuaskan
+≥ 70	🙂 Baik
+≥ 60	😐 Cukup
+< 60	❌ Kurang
+✅ Kelulusan:
 ≥ 70 → Lulus
 < 70 → Tidak Lulus
-Pemanggilan:
+▶️ Cara Menjalankan
 CALL cek_predikat_mahasiswa(85);
 🧪 Pengujian
 
-Semua program diuji menggunakan:
+✔ Menggunakan CALL untuk Stored Procedure
+✔ Menggunakan SELECT untuk query CASE
+✔ Semua output telah sesuai dengan logika percabangan
 
-CALL untuk stored procedure
-SELECT untuk query CASE
+📊 Insight / Pembelajaran
+🧠 IF-THEN-ELSE cocok untuk logika kompleks dalam procedure
+⚡ CASE lebih efisien untuk query langsung
+🔄 Stored Procedure membuat kode lebih modular & reusable
+📎 Contoh Output
+Status: Hampir Habis
 
-Hasil diuji untuk memastikan:
+Total Belanja : Rp 1200000
+Diskon : 15%
+Jumlah Diskon : Rp 180000
+Total Bayar : Rp 1020000
 
-Logika percabangan berjalan benar
-Output sesuai dengan kondisi yang ditentukan
-🎯 Kesimpulan
+Nilai : 85
+Predikat : Memuaskan
+Status : Lulus
+🏁 Status Project
 
-Melalui tugas ini, dipelajari bahwa:
+✅ Selesai & Berjalan dengan Baik
 
-IF-THEN-ELSE cocok untuk logika dalam procedure
-CASE efektif untuk query langsung
-Stored Procedure membantu modularisasi program di database
+📌 Catatan
+
+Project ini dibuat untuk keperluan pembelajaran dan latihan Pemrograman Basis Data.
